@@ -15,6 +15,12 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  a, b, c = [a, b,c].sort
+  
+  if a == 0 || a + b <= c
+    raise TriangleError
+  end
+  
   case [a, b, c].uniq.size
   when 1 then :equilateral
   when 2 then :isosceles
